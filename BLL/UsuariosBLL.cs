@@ -23,9 +23,9 @@ namespace BLL
                     db.Dispose();
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                throw ex;
+                throw e;
             }
         }
 
@@ -41,6 +41,40 @@ namespace BLL
             Usuarios us = db.Usuarios.Find(Id);
 
             db.Usuarios.Remove(us);
+            db.SaveChanges();
+        }
+
+        public static List<Usuarios> GetListaIdUsuarios(int Id)
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+            var db = new SistemaRegistroDb();
+            lista = db.Usuarios.Where(o => o.IdUsuario == Id).ToList();
+            return lista;
+        }
+
+        public static List<Usuarios> GetLista()
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+            var db = new SistemaRegistroDb();
+            lista = db.Usuarios.ToList();
+            return lista;
+        }
+
+        public static List<Usuarios> GetListaNombreUsuario(string au)
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+            var db = new SistemaRegistroDb();
+            lista = db.Usuarios.Where(o => o.NombreUsuario == au).ToList();
+            return lista;
+        }
+
+        public static void Modificar(int Id, Usuarios usuario)
+        {
+            var db = new SistemaRegistroDb();
+            Usuarios u = db.Usuarios.Find(Id);
+
+            u.NombreUsuario = usuario.NombreUsuario;
+            u.Contrasena = usuario.Contrasena;
             db.SaveChanges();
         }
 

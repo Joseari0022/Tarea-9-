@@ -14,7 +14,7 @@ namespace RegistroUsuario
 {
     public partial class Form1 : Form
     {
-        RegisterUsersForm RU = new RegisterUsersForm();
+        
         public Form1()
         {
             InitializeComponent();
@@ -28,15 +28,12 @@ namespace RegistroUsuario
 
         private void button12_Click(object sender, EventArgs e)
         {
-            Usuarios usuario = new Usuarios();
-            Llenar(usuario);
-            UsuariosBLL.Insertar(usuario);
+            
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            if (IdValidado("Favor ingresar el id del mensajero que desea buscar") && BuscarValido())
-                Llenar(UsuariosBLL.Buscar(RU.StringToInt(IdUsuariotextBox.Text)));
+          
 
         }
 
@@ -44,7 +41,12 @@ namespace RegistroUsuario
         {
             if(string.IsNullOrEmpty(IdUsuariotextBox.Text))
             {
-                ErrorProvider.
+                IderrorProvider.SetError(IdUsuariotextBox, "Ingrese el Id");
+                MessageBox.Show(Mensaje);
+                return false;
+            }else
+            {
+                return true;
             }
         }
 
@@ -58,6 +60,39 @@ namespace RegistroUsuario
             
                 return true;
             
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (IdValidado("") && BuscarValido())
+                Llenar(UsuariosBLL.Buscar(RU.StringToInt(IdUsuariotextBox.Text)));
+        }
+
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            Usuarios usuario = new Usuarios();
+            Llenar(usuario);
+            UsuariosBLL.Insertar(usuario);
+        }
+
+        private void Deletebutton_Click(object sender, EventArgs e)
+        {
+            if(IdValidado("") && BuscarValido())
+            {
+                UsuariosBLL.Eliminar(RU.StringToInt(IdUsuariotextBox.Text));
+                MessageBox.Show("Usuario Eliminado");
+            }
+        }
+
+        private void Nuevobutton14_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
