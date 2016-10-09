@@ -60,12 +60,23 @@ namespace BLL
             return lista;
         }
 
-        public static List<Usuarios> GetListaNombreUsuario(string au)
+       /* public static List<Usuarios> GetListaNombreUsuario(string aux)
         {
             List<Usuarios> lista = new List<Usuarios>();
             var db = new SistemaRegistroDb();
-            lista = db.Usuarios.Where(o => o.NombreUsuario == au).ToList();
+            lista = db.Usuarios.Where(o => o.NombreUsuario == aux).ToList();
             return lista;
+        }*/
+        public static List<Usuarios> GetListaNombreUsuario(string aux)
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+
+            var db = new SistemaRegistroDb();
+
+            lista = db.Usuarios.Where(p => p.NombreUsuario == aux).ToList();
+
+            return lista;
+
         }
 
         public static void Modificar(int Id, Usuarios usuario)

@@ -46,6 +46,7 @@
             this.NombreerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ContrasenaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ConfirmarContrasenaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Nuevobutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BuscarerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NombreerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContrasenaerrorProvider)).BeginInit();
@@ -140,7 +141,7 @@
             this.Modificarbutton14.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Modificarbutton14.Image = ((System.Drawing.Image)(resources.GetObject("Modificarbutton14.Image")));
             this.Modificarbutton14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Modificarbutton14.Location = new System.Drawing.Point(28, 318);
+            this.Modificarbutton14.Location = new System.Drawing.Point(212, 318);
             this.Modificarbutton14.Name = "Modificarbutton14";
             this.Modificarbutton14.Size = new System.Drawing.Size(141, 44);
             this.Modificarbutton14.TabIndex = 9;
@@ -154,7 +155,7 @@
             this.Savebutton.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Savebutton.Image = ((System.Drawing.Image)(resources.GetObject("Savebutton.Image")));
             this.Savebutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Savebutton.Location = new System.Drawing.Point(210, 318);
+            this.Savebutton.Location = new System.Drawing.Point(400, 318);
             this.Savebutton.Name = "Savebutton";
             this.Savebutton.Size = new System.Drawing.Size(131, 44);
             this.Savebutton.TabIndex = 10;
@@ -167,7 +168,7 @@
             // 
             this.Deletebutton.Image = ((System.Drawing.Image)(resources.GetObject("Deletebutton.Image")));
             this.Deletebutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Deletebutton.Location = new System.Drawing.Point(394, 318);
+            this.Deletebutton.Location = new System.Drawing.Point(563, 318);
             this.Deletebutton.Name = "Deletebutton";
             this.Deletebutton.Size = new System.Drawing.Size(131, 44);
             this.Deletebutton.TabIndex = 11;
@@ -192,9 +193,23 @@
             // 
             this.ConfirmarContrasenaerrorProvider.ContainerControl = this;
             // 
+            // Nuevobutton
+            // 
+            this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
+            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Nuevobutton.Location = new System.Drawing.Point(40, 318);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(135, 44);
+            this.Nuevobutton.TabIndex = 12;
+            this.Nuevobutton.Text = "Nuevo";
+            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
+            // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(573, 411);
+            this.ClientSize = new System.Drawing.Size(756, 395);
+            this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Deletebutton);
             this.Controls.Add(this.Savebutton);
             this.Controls.Add(this.Modificarbutton14);
@@ -274,6 +289,7 @@
         private System.Windows.Forms.ErrorProvider NombreerrorProvider;
         private System.Windows.Forms.ErrorProvider ContrasenaerrorProvider;
         private System.Windows.Forms.ErrorProvider ConfirmarContrasenaerrorProvider;
+        private System.Windows.Forms.Button Nuevobutton;
     }
 }
 
