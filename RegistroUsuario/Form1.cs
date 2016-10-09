@@ -81,9 +81,9 @@ namespace RegistroUsuario
             Usuarios usuario = new Usuarios();
             BuscarerrorProvider.Clear();
             Llenar(usuario);
-            UsuariosBLL.Insertar(usuario);
             if(ValidarTexb() && ValidarExist(NombretextBox10.Text))
             {
+                //Llenar(usuario);
                 UsuariosBLL.Insertar(usuario);
                 Limpiarme();
                 MessageBox.Show("Guardado con exito");
