@@ -22,8 +22,8 @@ namespace RegistroUsuario
 
         public void Llenar(Usuarios u)
         {
-            u.NombreUsuario = NombretextBox10.Text;
-            u.Contrasena = ContrasenatextBox12.Text;
+            u.NombreUsuario = NombretextBox10.Text = "juan"; 
+            u.Contrasena = ContrasenatextBox12.Text = "12345";
         }
 
        

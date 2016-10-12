@@ -10,8 +10,7 @@ namespace BLL
 {
     public class UsuariosBLL
     {
-        Usuarios usuario = new Usuarios();
-
+        Usuarios usuario = new Usuarios();  
         public static void Insertar(Usuarios u)
         {
             try
